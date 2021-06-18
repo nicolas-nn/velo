@@ -12,7 +12,7 @@
 <body>
   <?php require_once 'templates/header.php' ?>
   <main>
-    <h1>Accueil</h1>
+    <h1>En route vers...</h1>
     <div id="accueil">
       <img src="./images/velo.png" alt="velo">
       <div>      
