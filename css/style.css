@@ -1,0 +1,22 @@
+#accueil{
+
+    display: flex;
+    flex-direction: row;
+    border: black solid 1px;
+}
+ul li{
+    list-style-type: none;
+    
+}
+ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+a{
+    color: black;
+}
+
+
+
+
