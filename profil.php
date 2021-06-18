@@ -24,7 +24,8 @@
             <?php endif?>
         </div>
         <div>
-            <form action="controllers/administration.php" methode="POST">
+            <form action="controllers/administration.php" method="POST">
+            <h1>Options:</h1>
 
             <label for="case1">Cochez pour afficher le type de vélo</label>
             <input type="checkbox" name="case1" id="case1" value="oui" ><br>
@@ -35,19 +36,36 @@
 
             <button type="submit">Valider</button>
 
-            
+
+            <?php if (isset($_SESSION['isType'])||isset($_SESSION['isRoue'])):?>
+                <br>
+                <label for="case3">Cochez pour ne plus afficher les informations</label>
+                <input type="checkbox" name="case3" id="case3" value="oui">
+                <button type="submit">Cacher</button>
+            <?php endif?>   
             </form>
         </div>
        
-            <?php if(isset($_SESSION['isBike'])):?>
-             <div>    
-                <p>Le type de vélo est <?= $_SESSION['type']?>.</p>          
-                <p>La taille de roue est <?= $_SESSION['pneu']?>.</p>
+            <?php if(isset($_SESSION['isType'])):?>
+            <div>
+                <h1>Modèle :</h1>    
+                <p>Le type de vélo est <?= $_SESSION['type']?>.</p>  
                 
-             </div>
             <?php endif?>
+                <?php if(isset($_SESSION['isRoue'])):?>
+                
+                 <h1>Diamètre :</h1> 
+                 <p>La taille de roue est <?= $_SESSION['pneu']?>.</p>
+            </div>
+            <?php endif?>
+            <?php if(isset($_SESSION['cache'])){
+                unset($_SESSION['isType']);
+                unset($_SESSION['isRoue']);
+            }?>
+            
        
     </section>
+
 
 
     
